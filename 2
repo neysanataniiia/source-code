@@ -1,0 +1,51 @@
+#Nama: Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM : 71200661
+
+''' Dari nomor 1,2, dan 3, Jeni diminta untuk mengambil salah satu nomor saja untuk menentukan 
+    rumus matematika apa yang akan ia dapat. Berikut adalah ketentuannya:
+        a. Jika ia memilih nomor 1, ia akan mendapat rumus luas lingkaran.
+        b. jika ia memilih nomor 2, ia akan mendapat rumus luas persegi panjang. 
+        c. jika ia memilih nomor 3, ia akan mendapat rumus luas layang-layang. 
+    Setelah mendapatkan salah satu rumus, ia diminta lagi untuk mengisi nilai setiap input yang muncul.
+    Lalu barulah ia memperoleh hasil dari rumus tersebut.Bantulah Jeni!
+'''
+'''
+Input: 
+nomor 1 = luas lingkaran ; nomor 2 = luas persegi panjang ; nomor 3 = luar layang-layang
+
+Proses:
+pertama, buat input untuk user.
+
+kedua , buat percabangan.
+jika nomor == 1 ; ' Luas lingkaran' , namun jika tidak maka lanjut ke berikutnya
+jika nomor == 2 ; ' Luas Persegi Panjang' namun jika tidak maka lanjut ke berikutnya
+jika nomor == 3 ; ' Luas Layang-Layang' , namun jika tidak juga maka lanjut ke berikutnya.
+jika nomor == selain dari 1,2,3 ; mendapatkan tampilan kalimat 'Nomor yang anda masukkan tidak ada'
+
+Output:
+Hasil adalah luas yang sesuai dengan ketentuan yang ada dan masukan dari user. 
+'''
+
+nomor = int(input('Masukkan Nomor 1/2/3 : '))
+
+if nomor == 1 :
+    print('Anda mendapatkan rumus Luas Lingkaran')
+    phi = 3.14
+    r = float(input('Masukkan jari-jari:'))
+    luas_lingkaran = phi * (r ** 2)
+    print('Luas Lingkaran adalah', luas_lingkaran)
+elif nomor == 2 :
+    print('Anda mendapatkan rumus Luas Persegi Panjang')
+    p = float(input('Masukkan panjang : '))
+    l = float(input('Masukkan Lebar: '))
+    luas_persegipanjang = p * l
+    print('Luas Persegi Panjang adalah', luas_persegipanjang)
+elif nomor == 3:
+    print('Anda mendapatkan rumus Luas Layang-Layang')
+    d1 = float(input('Masukkan diagonal 1 :'))
+    d2 = float(input('Masukkan diagonal 2:'))
+    luas_layang2 = 1/2 * d1 * d2 
+    print('Luas Layang-layang adalah', luas_layang2 )
+else:
+    print('Nomor yang anda masukkan tidak ada')
