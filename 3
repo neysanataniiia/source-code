@@ -1,0 +1,55 @@
+#Nama: Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM : 71200661
+ 
+''' Anna ingin mencari tahu umur seseorang dari tahun lahirnya . Bantulah Anna untuk mencari tahu dengan membuat
+sebuah fungsi untuk menghitung umur seseorang dengan ketentuan dimana print diluar fungsi
+dan harus mengembalikan return! Silahkan anda menggunakan pemanggilan fungsi berikut ini tanpa perlu mengubahnya!
+-> def menghitung_umur(tahunsekarang,tahunlahir,ulangtahun)
+......
+'''
+'''
+Input: 
+def menghitung_umur(tahunsekarang,tahunlahir,ulangtahun)
+tahunsekarang
+tahunlahir
+ulangtahun
+
+Proses:  
+pertama :
+mulai dengan membuat def menghitung_umur
+1. umur dari parameter tahunsekarang dikurang tahunlahir
+2. percabangan ulangtahun antara sudah ultah atau belum tahun sekarang
+
+kedua:
+input untuk user
+tahunsekarang
+tahunlahir
+ulangtahun
+
+ketiga:
+print def
+
+Output:
+umur seseorang tersebut.
+'''
+
+def menghitung_umur(tahunsekarang,tahunlahir,ulangtahun):
+    umur = tahunsekarang-tahunlahir
+    if ulangtahun == str.lower("ya") or ulangtahun == str.upper("YA"):
+        return umur
+    else:
+        umur1 = umur-1
+        return umur1
+
+tahunsekarang = int(input('Berapakah tahun sekarang = '))
+tahunlahir=int(input('Berapa tahun kelahiranmu = '))
+ulangtahun = input('Apakah tahun sekarang anda sudah berulang tahun? /jika sudah, isi = ya/ ')
+a = menghitung_umur(tahunsekarang,tahunlahir,ulangtahun)
+
+print('Anda berumur',a,'tahun')
+
+
+
+
+
