@@ -1,0 +1,77 @@
+#Nama: Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM : 71200661
+ 
+''' Ellora dan keempat temannya sedang bermain di tempat nomor undian dimana permainan itu bisa membuat untung yang banyak dan bisa juga 
+membuat rugi karena tak dapat apa-apa. Di permainan ini setiap peserta diperbolehkan untuk memberi uang sesuai dengan keinginan mereka. 
+namun perlu diketahui bahwa bermain undian untuk sekali main diwajibkan untuk membayar 11000 rupiah.Pada permainan ini ada nomor pilihan yaitu 
+1,2,3,4,5 yang disetiap nomor ada penambahan uang dan juga ada pengurangan uang,tidak ada peserta yang diperbolehkan mengetahui ketentuan 
+setiap nomor undian sebagai berikut:
+Untuk nomor 1, pengurangan uang 75000 rupiah
+Untuk nomor 2, penambahan uang 60000 rupiah
+Untuk nomor 3, pengurangan uang 15000 rupiah
+Untuk nomor 4, pengurangan uang 11000 rupiah
+Untuk nomor 5, penambahan uang 40000 rupiah
+Dan juga Ellora dan keempat temannya sudah menentukan berapa banyak uang yang masing-masing ingin keluarkan:
+Ellora sebanyak 150000 rupiah mengambil 3 undian (1,1,2), Rere sebanyak 60000 rupiah mengambil 2 undian (2,1),
+Rizky sebanyak 200000 rupiah mengambil 4 undian (1,5,4,1), Dinda sebanyak 20000  rupiah mengambil 1 undian(2),dan Nagita sebanyak 
+90000 rupiah mengambil 3 undian(4,5,2).
+
+Bantulah agar Ellora dan teman-temannya bisa mengetahui berapa duit yang mereka peroleh pada undian tersebut!
+
+'''
+'''
+Input: 
+uang wajib undian = 11000 rupiah
+ketentuan nomor undian 1,2,3,4,5
+1. - 75000
+2. + 60000
+3. - 15000
+4. - 11000
+5. + 40000
+uang yg akan dikeluarkan oleh ellora dan teman"nya
+
+Proses:  
+input untuk user berapa org yg mengikuti permainan undian
+perulangan
+    nama
+    uang
+    input untuk user berapa kali ingin bermain undian
+    perulangan utk undian
+        uang - 11000
+        percabangan uang<=0 break
+        input untuk user 1-5
+        percabangan1,2,3,4,5
+    percabangan hasil
+
+Output:
+total hasil uang yang mereka peroleh setelah bermain undian
+
+'''
+
+n= int(input('Berapa orang yang mengikuti undian?'))
+for y in range(1,n+1):
+    nama = input('Nama = ')
+    uang = int(input('Berapa uang yang anda punya?'))
+    a = int(input('Masukkan berapa kali ingin mencoba undian?'))
+    for x in range(1, a+1):
+        uang = uang - 11000
+        if uang<= 0:
+            break
+        n = int(input('Dari nomor 1-5, ketik nomor yang ingin anda pilih:'))
+        if n == 1 :
+            uang -= 75000
+        elif n == 2:
+            uang += 60000
+        elif n == 3:
+            uang -= 15000
+        elif n == 4:
+            uang -= 11000
+        elif n == 5:
+            uang += 40000
+        else:
+            print('Nomor tidak sesuai')
+    if uang<=11000:
+        print('Uang yang anda punya kurang dan anda tidak bisa melanjutkan permainan')
+    else:
+        print('Total uang', nama, 'adalah', uang, 'rupiah')
