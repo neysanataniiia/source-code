@@ -1,0 +1,65 @@
+#Nama: Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM : 71200661
+ 
+''' Buatlah program yang meminta nilai n dimasukkan dari papan-ketik dan kemudian membuat kotak yang disusun dari simbol 
+* dengan tinggi n dan lebar 2n. Nilai n diharuskan lebih besar daripada 2.
+Gambar berikut menunjukan contoh untuk n sama dengan 5.
+**********
+*        *
+*        *
+*        *
+**********
+
+'''
+'''
+Input: 
+simbol = *
+tinggi (input untuk user) = n
+lebar (input untuk user) = 2n
+n-nya harus lebih besar daripada 2
+
+Proses:
+menampilkan judulnya - > pembuatan kotak
+                        ------------------
+
+input untuk user -> n 
+syaratnya : harus lebih besar daripada 2
+percabangan untuk memenuhi syarat yg diatas
+
+perulangan pertama
+    -> untuk bagian * atas di awal
+
+perulangan kedua :
+    perulangan untuk * di ujung2nya
+        perulangan untuk bagian kosong
+
+perulangan ketiga:
+    -> untuk bagian * paling bawah di akhir
+
+Output:
+kotak yang sesuai dengan inputan user
+
+'''
+
+print('Pembuatan Kotak')
+print('----------------')
+
+n = int(input('n (lebih besar daripada 2) :'))
+if n <= 2 :
+    n = 0
+
+for kolom in range(1, 2*n+1):
+    print('*', end='')
+print()
+
+for baris in range(1, n-1):
+    print('*', end='')
+    for kolom in range(1,2*n -1):
+        print(' ', end='')
+    print('*')
+
+for kolom in range(1,2*n+1):
+    print('*', end='')
+print()
+
