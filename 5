@@ -1,0 +1,54 @@
+#Nama: Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM : 71200661
+ 
+''' Dyna meminta anda untuk membuat program string untuk menghitung jumlah huruf kecil dan huruf kapital masing-masing 
+melalui inputan dari papan ketik. 
+
+'''
+'''
+Input: 
+input masukan dari user
+jumlah hurf kecil pada inputan
+jumlah huruf kapital pada inputan
+
+Proses:
+judul -> 'PenghitungHuruf Kapital dan Kecil'
+        ---------------------------------------
+
+inputan untuk user (string)
+
+jumlahHurufKecil = 0
+jumlahHurufKapital = 0
+
+
+perulangan 
+    percabangan untuk huruf kapital
+    percabangan untuk huruf kecil
+
+tampilan jumlah huruf kapital
+tampilan jumlah huruf kecil
+
+Output
+jumlah huruf kapital pada inputan dari user
+jumlah huruf kecil pada inputan dari user
+
+'''
+print('Penghitung Huruf Kapital dan Huruf Kecil')
+print('----------------------------------------')
+
+jumlahHurufKecil = 0
+jumlahHurufKapital = 0
+
+teks = input('Masukkan string=')
+
+for i in range(0,len(teks)):
+    kata = teks[i]
+    if kata.isupper():
+        jumlahHurufKapital =jumlahHurufKapital + 1
+    elif kata.islower():
+        jumlahHurufKecil = jumlahHurufKecil + 1
+
+print('Jumlah Huruf Kapital adalah', jumlahHurufKapital)
+print('Jumlah Huruf Kecil adalah ', jumlahHurufKecil)
+
