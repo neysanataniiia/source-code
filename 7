@@ -1,0 +1,97 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Amelia ingin mendata pelanggan yang membeli barang yang dia jual.Barang-barang yang dijual hanya 5 jenis namun laris-manis
+yaitu : buku dengan harga 15.000,  sepatu dengan harga 50.000, earphone dengan harga 35.000, masker dengan harga 5.000, 
+dan gelang dengan harga 15.000. Pelangannya biasanya membeli satu tapi juga bisa lebih dari satu dan ia merasa kesulitan 
+untuk menghitungnya dan ia memintamu untuk membuat program untuk memudahkan pekerjaannya lalu datanya akan disimpan di data.txt.
+sebagai teman, bantulah Amelia!
+
+'''
+'''
+Input:
+Buku -> harga 15.000
+Sepatu -> harga 50.000
+Earphone -> harga 35.000
+Masker -> harga 5000
+Gelang -> harga 15.000
+
+Proses:
+a = string(buku = harga)
+b = string(Sepatu= harga)
+c = string(Earphone= harga)
+d = string(Masker= harga)
+e = string(Gelang = harga)
+
+input nama_pelanggan
+string =''
+total = 0
+
+perulangan while:
+    input dengan pilihan 1,2,3,4,5 dan ditambah 6 yaitu selesai
+    percabangan
+
+perulangan while
+    tampilan dari string pilihan
+    input benar atau tidak
+    percabangan
+
+Output:
+tampilan dari string
+pembuatan file data txt dan ada hasilnya (nama,barang,total)
+'''
+a = ' buku = 15000'
+b = ' Sepatu= 50000'
+c = ' Earphone= 35000'
+d = ' Masker= 5000'
+e = ' Gelang = 15000'
+
+nama_pelanggan = input('Masukkan nama anda:')
+string =''
+total = 0
+
+while True:
+    pilihan = int(input('Pilihan:\n1. Buku = 15000\n2. Sepatu= 50000\n3. Earphone=35000\n4. Masker=5000\n5. Gelang = 15000\n6. Selesai\nPilihlah nomor yang anda ingin:'))
+    if pilihan == 1:
+        total += 15000
+        string +=a
+    elif pilihan == 2:
+        total += 50000
+        string += b
+    elif pilihan == 3:
+        total+=35000
+        string += c
+    elif pilihan == 4 :
+        total +=5000
+        string += d
+    elif pilihan == 5:
+        total += 15000
+        string += e
+    elif pilihan == 6 :
+        break
+    else: 
+        print('Nomor yang anda masukkan tidak sesuai!')
+        break
+
+while True:
+    print('Ini barang yang anda pilih:', string)
+    a = input('Untuk memastikan, apakah barang yang anda pilih sudah benar? Jika benar ketik ya, jika salah ketik tidak:')
+    a = a.lower()
+    if a == 'ya':
+        print(nama_pelanggan,', total semua barang yang anda beli adalah ', total)
+        nama = nama_pelanggan
+        barang = '\nbarang yang anda beli:'+string
+        total_= '\n' + nama_pelanggan + ', total semua yang anda beli adalah ' + str(total)
+        file = open('data.txt','w')
+        file.write(nama + barang + total_)
+        file.close()
+        break
+    elif a == 'tidak':
+        print('Silahkan diulang kembali dari awal')
+        break
+    else: 
+        print('Tidak sesuai!')
+        break
+
