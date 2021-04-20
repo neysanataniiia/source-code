@@ -1,0 +1,53 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Anggi memintamu untuk membuat program dengan membuat input sepuluh bilangan bulat yaitu 8,13,72,3,9,7,4,21,54,8 lalu keseluruhannya akan disimpan didalam list.
+Selanjutnya, akan ada tampilan yang melaporkan nilai rata-ratanya dan daftar nilai yang lebih besar daripada nilai rata-ratanya.
+Sebagai teman, bantulah Anggi!
+    
+'''
+'''
+Input:
+input bilangan bulat
+8 13 72 3 9 7 4 21 54 8 
+
+Proses:
+1. judul -> 'Masukkan 10 data bilangan bulat'
+2. jumlah data 10
+3. total = 0
+4. data list yang masih kosong isinya
+5. perulangan (total)
+        input
+        menggunakan fungsi append di data
+        penjumlahan total dengan input
+6. hitung rata-rata
+7. tampilan rata-rata
+8. judul -> Daftar nilai yang di atas rata-rata
+9. perulangan
+    percabangan
+
+Output
+tampilan dari hasil rata-rata
+tampilan hasil dari daftar nilai> rata-rata
+'''
+print('Masukkan 10 data bilangan bulat')
+
+jmlh_data = 10
+total = 0
+data = []
+
+for i in range(0,jmlh_data):
+    bilangan = int(input('Bilangan:'))
+    data.append(bilangan)
+    total = total + bilangan
+
+rata2 = total/10.0
+print('Rata-rata = ', rata2)
+
+print('Daftar nilai yang diatas rata-rata')
+
+for i in range(0,jmlh_data):
+    if data[i]> rata2:
+        print(data[i])
