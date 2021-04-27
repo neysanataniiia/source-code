@@ -1,0 +1,82 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Maya mempunyai catatan kecil berisi kamus. Ia meminta mu untuk membantunya untuk membuat program
+yang ada masukan bahasa inggris lalu muncul terjemahan bahasa indonesia-nya dari kamus yang sudah
+ia buat dari catatan kecilnya.
+kamusnya berisi : {arrogant':'sombong','curious':'penasaran','extraordinary':'luarbiasa','ordinary':'biasa',
+                   'secret':'rahasia','village':'desa','advise':'menasihati','selfish':'egois','coward':'penakut'
+                   'seperate':'terpisah','friendly':'ramah','rich':'kaya','smart':'pintar'}
+lalu hasil dari masukan dan terjemahan dari masukan dijadikan menjadi kamus baru dan ditampilkan dari yang sebelum diurutkan
+menjadi sesudah diurutkan. Selanjutnya, tambahkan tabel kamus.
+
+'''
+'''
+Input:
+kamusnya berisi : {arrogant':'sombong','curious':'penasaran','extraordinary':'luarbiasa','ordinary':'biasa',
+                   'secret':'rahasia','village':'desa','advise':'menasihati','selfish':'egois','coward':'penakut'
+                   'seperate':'terpisah','friendly':'ramah','rich':'kaya','smart':'pintar'}
+kamus baru sebelum dan sesudah diurutkan
+tabel kamus
+
+Proses:
+kamusnya berisi : {arrogant':'sombong','curious':'penasaran','extraordinary':'luarbiasa','ordinary':'biasa',
+                   'secret':'rahasia','village':'desa','advise':'menasihati','selfish':'egois','coward':'penakut'
+                   'seperate':'terpisah','friendly':'ramah','rich':'kaya','smart':'pintar'}
+
+judul -> perintah |Masukan Kata Bahasa Inggris | Jika ingin selesai, ketik selesai
+kamus baru dengan dictionary yang masih kosong
+
+perulangan while
+    inputan user
+    inputan untuk user ini diatur menjadi lower
+    percabangan ->selesai
+
+    hasil = kamus.get()
+    tampilkan hasil
+    percabangan kamus baru 
+
+urutan 
+tampilan sebelum urutan
+tampilan sesudah urutan
+tampilan judul tabel kamus
+tampilan -> bahasa inggris bahasa indonesia
+inggris = urutan.keys()
+perulangan inggris
+
+Output:
+tampilan judul
+tampilan hasil
+tampilan sebelum dan sesudah urutan
+tampilan tabel kamus
+'''
+kamus = {'arrogant':'sombong','curious':'penasaran','extraordinary':'luarbiasa','ordinary':'biasa','secret':'rahasia','village':'desa','advise':'menasihati','selfish':'egois','coward':'penakut','seperate':'terpisah','friendly':'ramah','rich':'kaya','smart':'pintar'}
+print('Masukan Kata Bahasa Inggris\nJika ingin selesai, ketik selesai')
+kamus_baru = dict()
+
+while True:
+    masukan = input('Bahasa Inggris:')
+    masukan = masukan.lower()
+    if masukan == 'selesai':
+        break
+
+    hasil = kamus.get(masukan,'Tidak ada di Kamus')
+    print('Bahasa Indonesianya adalah ', hasil)
+    
+    if masukan in kamus:
+        kamus_baru[masukan] = kamus.get(masukan)
+    else:
+        continue
+    print()
+
+urutan = dict(sorted(kamus_baru.items()))
+print('Kamus baru sebelum durutkan ialah ',kamus_baru)
+print('Kamus baru sesudah durutkan ialah ',urutan)
+
+print('-----------------------\n    Tabel Kamus\n-----------------------')
+print('Bahasa Inggris         Bahasa Indonesia')
+inggris = urutan.keys()
+for i in inggris:
+    print(i , '                    ', urutan[i])
