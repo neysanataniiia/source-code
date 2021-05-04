@@ -1,0 +1,83 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Karin ditugaskan oleh wali kelasnya untuk mengambil voting pada teman sekelasnya berjumlah 20 untuk memilih warna baju kelas. Yang paling banyak 
+votingnya, itulah warna baju kelas yang akan ditentukan. Wali kelas sudah memberikan beberapa warna yang akan menjadi pilihan pada Karin dan memberi waktu
+seminggu pada Karin. Hanya saja karin kewalahan dalam beberapa hari, dia cukup banyak mengikuti kegiatan. Jadi, dia datang kepada anda meminta
+bantuan anda untuk membuat program untuk mendata voting seisi kelas terkait perintah yang diberikan Wali kelas. Anda, sebagai teman Karin, bantulah Karin!
+Ada satu ketentuan juga yang diberitahu karin pada anda bahwa jikalau ada yang memilih warna berbeda, tidak perlu mendata ulang, anggap saja dia tidak 
+memilih.
+contoh input:
+warna = (merah,biru muda,biru tua,kuning,tosca,hijau tua,putih,hitam)
+hitungjumlahvoting(warna)
+'''
+'''
+Input:
+jumlah = 20
+warna = (merah,biru muda,biru tua,kuning,tosca,hijau tua,putih,hitam)
+ketentuannya -> warna berbeda dari warna yg telah ditentukan artinya tidak memilih
+
+Proses:
+warna = (merah,biru muda,biru tua,kuning,tosca,hijau tua,putih,hitam)
+fungsi hitungjumlahvoting(A):
+    input jumlah untuk user
+    data-> dictionary kosong
+    perulangan dengan range jumlah
+        input nama untuk user
+        tampilan pilihan warna
+        input pilihan warna 
+        setingan pilihan warna->lower
+        percabangan pilihwarna tidak ada di warna
+            tampilkan sesuai dengan ketentuan
+        percabagan pilihwarna tidak ada di data:
+            data[pilihwarna] = 1
+        lainnya:
+            data[pilihwarna] += 1
+    warna = ''
+    jmlh = 0
+    perulangan data:
+        percabangan warna jika string kosong:
+            warna =x
+        percabangan jika jmlah masih kosong/nol:
+            nilai dari perulangan di awal kita masukkan ke jmlh
+        if int(data[x]) lebih besar dari jmlh:
+            warna = x
+            jmlh = int(data[x])
+    tampilkan warna yg paling banyak yg milih dan jmlhnya
+Output:
+tampilan pilihan warna
+tampilkan sesuai dengan ketentuan
+tampilkan warna yg paling banyak yg milih dan jmlhnya
+'''
+warna = ('merah','biru muda','biru tua','kuning','tosca','hijau tua','putih','hitam')
+
+def hitungjumlahvoting(A):
+    jumlah = int(input('Masukkan jumlah orang seisi kelas: '))
+    data = dict()
+    for i in range(1,jumlah+1):
+        nama = input('Masukkan nama anda: ')
+        print('Pilihan warna:', A)
+        pilihwarna = input('Masukkan satu warna yang ingin anda pilih: ')
+        pilihwarna = pilihwarna.lower()
+        if pilihwarna not in A:
+            print('Warna pilihan tidak ada!Tidak bisa memilih lagi!')
+            continue
+        if pilihwarna not in data:
+             data[pilihwarna] = 1
+        else:
+            data[pilihwarna] += 1
+    warna = ''
+    jmlh = 0
+    for x in data:
+        if warna == '':
+            warna = x
+        if jmlh == 0:
+            jmlh = int(data[x])
+        if int(data[x]) >= jmlh:
+            warna=x
+            jmlh = int(data[x])
+    print('Warna yang banyak dipilih sekelas ialah ',warna,'dengan jumlah ',  jmlh)
+
+hitungjumlahvoting(warna)
