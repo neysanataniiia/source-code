@@ -1,0 +1,43 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Jessica meminta anda untuk membantunya untuk membuat program yang mempunyai input string lalu hasil yang muncul hanya karakter 
+didalam string yang berbeda-beda tanpa ada yang kembar. Bantulah jessica untuk membuat programnya!
+
+
+'''
+'''
+Input:
+untuk user inputan ->string
+karakter yg muncul berbeda2
+
+Proses:
+set kosong
+teks = input untuk user
+
+perulangan yg pertama -> i in range ()
+    a = teks[i]
+    set kosong dibikin add(a)
+
+perulangan kedua-> in set sudah ada isi
+    tampilkan satu per satu
+
+tampilan ()
+
+Output:
+karakter yang berbeda-beda
+
+'''
+himpunan = set()
+teks = input('string= ')
+
+for i in range(0,len(teks)):
+    a = teks[i]
+    himpunan.add(a)
+
+for i in himpunan:
+    print(i)
+
+print()
