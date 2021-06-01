@@ -1,0 +1,54 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Aurel ingin membuat program untuk menghitung huruf vokal yang berada di dalam sebuah string,
+namun dia kebingungan membuat programnya. Dia meminta bantuan anda untuk membuat program
+tersebut dengan string yang sudah dia berikan yaitu :
+'makanan itu sangat lezat'
+'Lagu favorite raya sangat ketinggalan zaman'
+Bantulah aurel membuat program untuk mendapatkan jumlah huruf vokal di string!
+    
+'''
+'''
+Input:
+'makanan itu sangat lezat'
+'Lagu favorite raya sangat ketinggalan zaman'
+hurufvokal = aiueo
+
+Proses:
+fungsi hurufvokal(karakter)
+    karakter -> lower
+    hurufvokal = aiueo
+    percabangan jika karakter didalam hurufvokal:
+        true
+    else
+        false
+
+fungsi hitunghurufvokal(kata,n):
+    percabangan jika n sama dengan 1: return hurufvokal(kata[0])
+    return hitunghurufvokal(kata,n-1) + hurufvokal(kata[n-1])
+
+Output
+jumlah huruf vokal didalam string
+'''
+
+def hurufvokal(karakter):
+    karakter = karakter.lower()
+    huruf_vokal ='aiueo'
+    if karakter in huruf_vokal:
+        return True
+    else:
+        return False
+
+def hitunghurufvokal(kata,n):
+    if n==1:
+        return hurufvokal(kata[0])
+
+    return hitunghurufvokal(kata,n-1)+hurufvokal(kata[n-1])
+
+x = 'biola'
+print('Jumlah huruf vokal didalam string berisi:','"',x,'"','adalah',hitunghurufvokal(x,len(x)))
+y = 'matematika'
+print('Jumlah huruf vokal didalam string berisi:','"',y,'"','adalah',hitunghurufvokal(y,len(y)))
