@@ -1,0 +1,59 @@
+#Nama : Neysa Natania Br. Singarimbun
+#Universitas Kristen Duta Wacana
+#NIM = 71200661
+
+''' 
+Dian ingin membuat sebuah program dengan yang didalamnya ada fungsi dan regular expression. program yang ia ingin buat tentang mencari
+substring di sebuah string. jika sebuah substring termasuk di dalam string dan peletakkannya tepat dibagian awal string, akan muncul string
+dengan awalan yang sesuai dengan substring yang diberikan, jika sebaliknya dimana substring termasuk didalam string namun bukan dipeletakkan
+awal, akan muncul tidak sesuai, dan jikalau substring tidak ada sama sekali didalam string, akan muncul bukan subtring. Bantulah
+Dian untuk membuat program tersebut! 
+'''
+'''
+Input:
+substring 
+string
+fungsi
+ada tiga ketentuan
+jika sebuah substring termasuk di dalam string dan peletakkannya tepat dibagian awal string, akan muncul string dengan awalan yang sesuai dengan substring yang diberikan
+jika sebaliknya dimana substring termasuk didalam string namun bukan dipeletakkan awal, akan muncul tidak sesuai,
+jikalau substring tidak ada sama sekali didalam string, akan muncul bukan subtring.
+
+Proses:
+import
+fungsi dengan 2 parameter(x,y)
+    percabangan sesuai ketentuan -> jika y didalam x
+        a = '^' + substring
+        x = research (..,..)
+        percabangan x :
+            tampilan akan muncul string dengan awalan yang sesuai dengan substring yang diberikan
+        else:
+            tidak sesuai
+    else:
+        bukan substring
+
+
+
+Output
+tampilan salah satu yang sesuai dengan ketentuan 
+
+'''
+import re
+def Pencarian (string, substring):
+    if substring in string:
+        a = '^' + substring
+        x = re.search(a, string)
+        if x:
+            print('String dengan awalan yang sesuai dengan dengan subtring yang diberikan')
+        else:
+            print('String dengan awalan yang tidak sesuai dengan substring yang diberikan')
+    else:
+        print('Bukan substring')
+
+string = 'Hari ini akan hujan'
+y = 'hujan'
+Pencarian(string,y)
+x = 'panas'
+Pencarian(string,x)
+z = 'Hari'
+Pencarian(string, z)
